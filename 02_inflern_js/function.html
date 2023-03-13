@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Popun_Function</title>
+  <style>
+    * {margin: 0;padding: 0;}
+    button {border: 0;background-color: transparent;}
+    .blind {overflow: hidden;position: absolute;top: -1px;left: -1px;width: 1px;height:1px;clip: path(0, 0, 0, 0);}
+    .wrap {padding: 50px 30px;box-sizing: border-box;}
+    .btn_open {padding: 10px 15px;font-size: 16px;color: blueviolet;border-radius: 5px;border: 1px solid blueviolet;box-sizing: border-box;}
+    .layer_alert {display: none;position: fixed;top: 0;left: 0;width: 100%;padding: 10px 20px;font-size: 14px;color: #fff;text-align: center;word-break: break-word;background-color: lightsalmon;box-sizing: border-box;}
+    .layer_alert .text {font-size: 14px;}
+    .layer_alert .btn_close {position: absolute;top: 50%;right: 20px;transform: translateY(-50%);width: 30px;height: 30px;}
+    .layer_alert .btn_close:before, .layer_alert .btn_close:after {position: absolute;top: 50%;left: 50%;width: 2px;height: 15px;background-color: #fff;content: ''}
+    .layer_alert .btn_close:before {transform: translate(-50%, -50%) skewX(45deg)}
+    .layer_alert .btn_close:after {transform: translate(-50%, -50%) skewX(-45deg)}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <button type="button" class="btn_open" onclick="alertSimple('block')">Open Alert</button>
+  </div>
+
+  <!-- Alert UI -->
+  <div class="layer_alert">
+    <p class="text">Alert Popup</p>
+    <button type="button" class="btn_close" onclick="alertSimple('none')"><span class="blind">Close</span></button>
+  </div>
+  <!-- //Alert UI -->
+
+  <!-- Script -->
+  <script>
+    function alertSimple(_state) {
+      document.querySelector('.layer_alert').style.display = _state
+    }
+    // function alert(_target) {
+    //   let button = _target,
+    //       alert = document.querySelector('.layer_alert')
+
+    //   if(button.getAttribute('class') == 'btn_open') {
+    //     alert.style.display = 'block'
+    //   } else {
+    //     alert.style.display = 'none'
+    //   }
+    // }
+  </script>
+  <!-- //Script -->
+</body>
+</html>
